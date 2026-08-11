@@ -1,0 +1,64 @@
+{
+  "brand": "greenelephant",
+  "brandTitle": "GREEN ELEPHANT",
+  "teamName": "Green Elephant",
+  "marketplace": "Amazon US",
+  "days": 30,
+  "spillDir": "../.rankboard/spill",
+  "out": "../.rankboard/build",
+  "markDays": [5, 6, 0],
+  "markLabel": "Fri · Sat · Sun",
+  "seal": {
+    "user": "greenelephant",
+    "siteDir": "..",
+    "publicUrl": "https://hocmaa-lang.github.io/greenelephant-reports/",
+    "gitEmail": "github-actions[bot]@users.noreply.github.com",
+    "gitName": "github-actions[bot]",
+    "publish": [
+      {
+        "src": "keywords.html",
+        "as": "index.html",
+        "passEnv": "RANKBOARD_GREENELEPHANT_PASS",
+        "title": "GREEN ELEPHANT — keyword rank by day"
+      },
+      {
+        "src": "keywords.html",
+        "as": "keywords.html",
+        "passEnv": "RANKBOARD_GREENELEPHANT_PASS",
+        "title": "GREEN ELEPHANT — keyword rank by day"
+      },
+      {
+        "src": "dashboard.html",
+        "as": "dashboard.html",
+        "passEnv": "RANKBOARD_GREENELEPHANT_PASS",
+        "title": "GREEN ELEPHANT — organic rank summary"
+      }
+    ]
+  },
+  "products": [
+    {
+      "key": "pole2",
+      "radarId": "b05b466f-f101-4b8e-af99-222e2ef6c906",
+      "asin": "B072K1B91Q",
+      "name": "Camping Tarp Poles — Telescoping, Set of 2",
+      "short": "Tarp Poles (2)",
+      "file": "pole2.json"
+    },
+    {
+      "key": "bags",
+      "radarId": "c1a00482-78d8-4a09-8108-50feac30bada",
+      "asin": "B0B3BVZNCM",
+      "name": "Portable Camping Toilet Bags — Compostable, 15 ct",
+      "short": "Toilet Bags",
+      "file": "bags.json"
+    },
+    {
+      "key": "potty",
+      "radarId": "f0b2ce97-12f6-4298-a4b6-38f45f214cde",
+      "asin": "B0BB6GRJFJ",
+      "name": "Travel Potty Bags — Potty Liners, Kids",
+      "short": "Travel Potty Bags",
+      "file": "potty.json"
+    }
+  ]
+}
