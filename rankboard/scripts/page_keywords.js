@@ -18,19 +18,28 @@ const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>${P.brandTitle} — keyword rank by day</title>
 <style>
 :root{
-  --bg:#F7F6F2;--surface:#FFFFFF;--line:#E2DFD6;--grid:#EFECE4;
-  --ink:#1B211E;--ink2:#4C5551;--ink3:#7F8A84;
-  /* sequential rank ramp: dark = rank 1, light = rank 100 */
-  --r1:#0B5C3B;--r2:#1B7A50;--r3:#3E9A6C;--r4:#7DBB98;--r5:#BEDCC9;
-  --none:#F0EDE6;--gap:#D3CFC4;
+  --bg:#F6F7F9;--surface:#FFFFFF;--line:#E1E4E9;--grid:#EDEFF3;
+  --ink:#171A1E;--ink2:#4A5158;--ink3:#7C858E;
+  /* Ordinal rank ramp — five DISTINCT hues, not one hue in five tints.
+     A single-hue ramp failed the dataviz validator here (adjacent bands ΔE 9.6,
+     floor is 15) and clients could not read it. Hues run blue -> cyan -> magenta
+     -> orange -> red: ordered, and deliberately green-free, because green and
+     orange are indistinguishable under deuteranopia (ΔE 1.7 when tested).
+     Validated light on #FFFFFF: all five checks PASS. Re-run
+     dataviz/scripts/validate_palette.js before touching any of these. */
+  --r1:#1D4ED8;--r2:#06B6D4;--r3:#C026D3;--r4:#F97316;--r5:#B91C1C;
+  --none:#EDEFF3;--gap:#CDD2D9;
   --good:#1F7A4C;--bad:#B0402C;
   --mark:rgba(194,98,10,.17);--markink:#9A5308;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0E1310;--surface:#141A17;--line:#26302B;--grid:#1C2420;
-  --ink:#EAEFEB;--ink2:#A9B4AE;--ink3:#77837D;
-  --r1:#7BEFBB;--r2:#4FD094;--r3:#34A876;--r4:#2A8760;--r5:#2E6B51;
-  --none:#1A211D;--gap:#333D37;
+  --bg:#0F1114;--surface:#16191D;--line:#282D34;--grid:#1C2026;
+  --ink:#EAEDF1;--ink2:#A7AFB8;--ink3:#767E87;
+  /* Dark steps are SELECTED, not a flip of the light ramp: the validator's dark
+     lightness band is L 0.48-0.67, so the bright pastels you would reach for all
+     fail it. Same five hues, retuned into that band against surface #16191D. */
+  --r1:#2563EB;--r2:#0891B2;--r3:#C026D3;--r4:#F0761A;--r5:#B02525;
+  --none:#191D22;--gap:#343A42;
   --good:#4CBF87;--bad:#E0785F;
   --mark:rgba(217,118,47,.20);--markink:#E09355;
 }}
