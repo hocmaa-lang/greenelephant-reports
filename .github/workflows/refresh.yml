@@ -56,6 +56,10 @@ jobs:
         run: |
           mkdir -p _site
           cp index.html keywords.html dashboard.html _site/
+          # Static deliverables that the rankboard build does not produce. They
+          # still have to be staged here, or the next refresh deploys a _site
+          # without them and their client links 404.
+          cp listing.html _site/
           touch _site/.nojekyll
           ls -la _site
 
